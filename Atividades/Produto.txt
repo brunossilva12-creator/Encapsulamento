@@ -1,0 +1,41 @@
+﻿class Produto
+{
+    private double _preco;
+
+    public double Preco
+    {
+        get
+        {
+            return _preco;
+        }
+        set
+        {
+            if (value < 0)
+            {
+                _preco = 0;
+            }
+            else
+            {
+                _preco = value;
+            }
+        }
+    }
+}
+------------------------------------
+namespace Encapsulamento
+{
+    internal class Program
+    {
+
+        static void Main()
+        {
+            Produto produto = new Produto();
+
+            produto.Preco = 50;
+            Console.WriteLine("Preço: " + produto.Preco);
+
+            produto.Preco = -20;
+            Console.WriteLine("Preço: " + produto.Preco);
+        }
+    }
+}
